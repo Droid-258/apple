@@ -16,7 +16,6 @@ struct ContentView:  View{
     @State var arr:[item] = [item(name:"study",completed : false,important:false),item(name:"gym",completed : false,important:false)]
     @State var rm  = 0
     @State var c = Color.cyan
-    @State var Ind:Color
     var body: some View{
         NavigationStack{
             Text("To do List")
@@ -101,7 +100,7 @@ struct ContentView:  View{
             .listStyle(.plain)
             .font(.title2)
             NavigationLink{
-                setting_view()
+                setting_view(c:$c)
                 
             }
             label:{
@@ -122,11 +121,10 @@ struct ContentView:  View{
             print("empty")
         }
     }
-    func change(){
-        Ind
-    }
+   
 }
     
 #Preview {
     ContentView()
 }
+
